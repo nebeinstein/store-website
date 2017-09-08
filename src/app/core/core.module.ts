@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 
+import { AppRoutingModule } from '../app-routing.module';
+
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 
@@ -8,8 +10,11 @@ import { HomeComponent } from './home/home.component';
         HeaderComponent,
         HomeComponent
     ],
-    imports: [],
+    imports: [
+        AppRoutingModule
+    ],
     exports: [
+        AppRoutingModule,
         HeaderComponent
     ],
     providers: []
