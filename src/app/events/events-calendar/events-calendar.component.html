@@ -23,17 +23,22 @@
         </li>
     </ul>
 </div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="calendar">
+            <tr class="weekdays">
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tues</th>
+                <th>Wed</th>
+                <th>Thurs</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
 
-<ul class="weekdays">
-    <li>Mo</li>
-    <li>Tu</li>
-    <li>We</li>
-    <li>Th</li>
-    <li>Fr</li>
-    <li>Sa</li>
-    <li>Su</li>
-</ul>
-
-<ul class="days"> 
-    <li *ngFor="let day of daysInCurrentMonth; let i = index">{{ i + 1 }}</li>
-</ul>
+            <tr class="days"> 
+                <sw-calendar-day *ngFor="let day of daysInCurrentMonth" [value]="day"></sw-calendar-day>
+            </tr>
+        </table>
+    </div>
+</div>

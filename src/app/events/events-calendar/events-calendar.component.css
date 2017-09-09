@@ -34,6 +34,11 @@ body {font-family: Verdana, sans-serif;}
     padding-top: 10px;
 }
 
+.calendar {
+    padding: 70px 25px;
+    width: 100%;
+}
+
 /* Weekdays (Mon-Sun) */
 .weekdays {
     margin: 0;
@@ -41,7 +46,7 @@ body {font-family: Verdana, sans-serif;}
     background-color:#ddd;
 }
 
-.weekdays li {
+.weekdays th {
     display: inline-block;
     width: 13.6%;
     color: #666;
@@ -55,7 +60,7 @@ body {font-family: Verdana, sans-serif;}
     margin: 0;
 }
 
-.days li {
+.days td {
     list-style-type: none;
     display: inline-block;
     width: 13.6%;
@@ -66,7 +71,7 @@ body {font-family: Verdana, sans-serif;}
 }
 
 /* Highlight the "current" day */
-.days li .active {
+.days td .active {
     padding: 5px;
     background: #1abc9c;
     color: white !important

@@ -36,19 +36,25 @@ export class CalendarService {
         this.currentDateChanged.next(this.currentDate);
     }
 
+    getStartDayInMonth(month: number, year: number){
+        var date = new Date(year, month, 1);
+        return date.getDay();
+    }
+
     getDaysInMonth(month: number, year: number){
         var date = new Date(year, month, 1);
         var days = [];
+        var startDay = this.getStartDayInMonth(month, year);
+        let i = 0;
+        while (i < startDay) {
+            days.push('');
+            i += 1;
+        }
         while (date.getMonth() === month) {
             days.push(date.getDate());
             date.setDate(date.getDate() + 1);
         }
         return days;
-    }
-
-    getStartDayInMonth(month: number, year: number){
-        var date = new Date(year, month, 1);
-        return date.getDay();
     }
 
     getMonthName(index: number) {
