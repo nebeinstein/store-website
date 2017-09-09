@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 
 import { EventService } from '../events/event.service';
+import { CalendarService } from '../events/events-calendar/calendar.service';
 
 @NgModule({
     declarations: [
@@ -19,6 +20,9 @@ import { EventService } from '../events/event.service';
         AppRoutingModule,
         HeaderComponent
     ],
-    providers: [EventService]
+    providers: [
+        EventService,
+        CalendarService
+    ]
 })
 export class CoreModule { }
