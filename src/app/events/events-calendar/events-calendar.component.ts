@@ -28,8 +28,7 @@ export class EventsCalendarComponent implements OnInit, OnDestroy {
                 this.daysInCurrentMonth = this.calendarService.getDaysInMonth(this.currentDate.getMonth(), this.currentYear);
             }
         );
-        this.today = new Date();
-        this.calendarService.setCurrentDate(this.today);
+        this.today = this.calendarService.getToday();
         this.currentDate = this.calendarService.getCurrentDate();
         this.currentMonthName = this.calendarService.getMonthName(this.currentDate.getMonth());
         this.currentYear = this.currentDate.getFullYear();
@@ -42,10 +41,6 @@ export class EventsCalendarComponent implements OnInit, OnDestroy {
 
     onNextMonth() {
         this.calendarService.setCurrentMonth(this.currentDate.getMonth() + 1);
-    }
-
-    isCurrentMonthToday() {
-        return this.today.getMonth() === this.currentDate.getMonth();
     }
 
     ngOnDestroy() {
