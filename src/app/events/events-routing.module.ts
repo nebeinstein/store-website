@@ -7,9 +7,9 @@ import { EventsListComponent } from './events-list/events-list.component';
 
 const eventsRoutes: Routes = [
     { path: '', component: EventsComponent, children: [
-        { path: '', redirectTo: 'events-list', pathMatch: 'full'},
-        { path: 'events-list', component: EventsListComponent },
-        { path: 'events-calendar', component: EventsCalendarComponent }
+        { path: '', redirectTo: 'list', pathMatch: 'full'},
+        { path: 'list', component: EventsListComponent },
+        { path: 'calendar', component: EventsCalendarComponent }
     ] }
 ];
 
