@@ -1,7 +1,25 @@
-<ol class="breadcrumb">
-    <li routerLinkActive="active"><a routerLink="list">Events List</a></li>
-    <li routerLinkActive="active"><a routerLink="calendar">Calendar</a></li>
-</ol>
+<div class="row">
+    <div class="col-md-12">
+        <div class="btn-group" role="group" aria-label="...">
+            <button
+                type="button"
+                class="btn btn-default"
+                routerLinkActive="active"
+                (click)="onNavigateTo('list')">
+                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                Events List
+            </button>
+            <button
+                type="button"
+                class="btn btn-default"
+                routerLinkActive="active"
+                (click)="onNavigateTo('calendar')">
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                Calendar
+            </button>
+        </div>
+    </div>
+</div>
 <div class="row">
     <div class="col-md-12">
         <router-outlet></router-outlet>
