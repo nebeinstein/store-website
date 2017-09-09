@@ -1,3 +1,3 @@
-<td>
+<td [ngClass]="{'today' : (isTodayMonth && value === today.getDate())}">
     {{ value }}
 </td>

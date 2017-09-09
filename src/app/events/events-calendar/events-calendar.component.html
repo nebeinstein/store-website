@@ -37,7 +37,11 @@
             </tr>
 
             <tr class="days"> 
-                <sw-calendar-day *ngFor="let day of daysInCurrentMonth" [value]="day"></sw-calendar-day>
+                <sw-calendar-day
+                    *ngFor="let day of daysInCurrentMonth"
+                    [value]="day"
+                    [isTodayMonth]="isCurrentMonthToday()"
+                    [today]="today"></sw-calendar-day>
             </tr>
         </table>
     </div>

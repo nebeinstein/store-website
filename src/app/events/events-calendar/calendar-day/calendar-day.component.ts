@@ -7,4 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class CalendarDayComponent {
     @Input() value;
+    @Input() isTodayMonth: boolean;
+    @Input() today;
 }
