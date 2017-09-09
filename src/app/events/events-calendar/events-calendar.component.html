@@ -9,12 +9,12 @@
     <ul>
         <li class="prev">
             <button class="btn btn-default" (click)="onPrevMonth()">
-                &#10094;
+                <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
             </button>
         </li>
         <li class="next">
             <button class="btn btn-default" (click)="onNextMonth()">
-                &#10095;
+                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
             </button>
         </li>
         <li *ngIf="!changing">
