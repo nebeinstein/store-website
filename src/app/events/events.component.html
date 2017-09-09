@@ -1,7 +1,9 @@
 <ol class="breadcrumb">
-    <li><a>Events List</a></li>
-    <li><a>Calendar</a></li>
+    <li routerLinkActive="active"><a routerLink="events-list">Events List</a></li>
+    <li routerLinkActive="active"><a routerLink="events-calendar">Calendar</a></li>
 </ol>
 <div class="row">
-
+    <div class="col-md-12">
+        <router-outlet></router-outlet>
+    </div>
 </div>
