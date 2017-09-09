@@ -17,7 +17,7 @@ export class TimePipe implements PipeTransform {
 					}
                 } else {
 					value[index] = item;
-					if(!value[index].includes(' a.m.')){
+					if(!value[index].includes(' a.m.') && !value[index].includes(' p.m.')){
 						value[index] += ' a.m.'
 					}
                 }
