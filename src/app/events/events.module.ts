@@ -9,6 +9,7 @@ import { EventItemComponent } from './events-list/event-list/event-item/event-it
 import { EventListComponent } from './events-list/event-list/event-list.component';
 import { EventsCalendarComponent } from './events-calendar/events-calendar.component';
 import { EventsListComponent } from './events-list/events-list.component';
+import { EventStartComponent } from './events-list/event-start/event-start.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +18,8 @@ import { EventsListComponent } from './events-list/events-list.component';
         EventItemComponent,
         EventListComponent,
         EventsCalendarComponent,
-        EventsListComponent
+        EventsListComponent,
+        EventStartComponent
     ],
     imports: [
         CommonModule,
