@@ -1,3 +1,24 @@
-<p>
-    Event detail works!
-</p>
+<div class="row">
+    <div class="col-xs-12">
+        <img
+            [src]="event.imagePath"
+            alt="{{ event.title }}"
+            class="img-responsive"
+            style="max-height: 300px;">
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h1>{{ event.title }}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h4>{{ event.date | date }} | {{ event.time }}</h4>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <p>{{ event.description }}</p>
+    </div>
+</div>
