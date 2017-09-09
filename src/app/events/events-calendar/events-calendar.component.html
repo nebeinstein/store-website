@@ -7,10 +7,18 @@
 </div>
 <div class="month"> 
     <ul>
-        <li class="prev"><button class="btn btn-default" (click)="onPrevMonth()">&#10094;</button></li>
-        <li class="next">&#10095;</li>
-        <li>
-            {{ currentDate.getMonth() }}<br>
+        <li class="prev">
+            <button class="btn btn-default" (click)="onPrevMonth()">
+                &#10094;
+            </button>
+        </li>
+        <li class="next">
+            <button class="btn btn-default" (click)="onNextMonth()">
+                &#10095;
+            </button>
+        </li>
+        <li *ngIf="!changing">
+            {{ currentMonthName }}<br>
             <span style="font-size:18px">{{ currentYear }}</span>
         </li>
     </ul>

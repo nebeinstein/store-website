@@ -14,7 +14,9 @@ const eventsRoutes: Routes = [
             { path: '', component: EventStartComponent },
             { path: ':id', component: EventDetailComponent}
         ] },
-        { path: 'calendar', component: EventsCalendarComponent }
+        { path: 'calendar', component: EventsCalendarComponent, children: [
+            { path: ':id', component: EventsCalendarComponent }
+        ] }
     ] }
 ];
 

@@ -10,34 +10,38 @@ import { CalendarService } from './calendar.service';
 })
 export class EventsCalendarComponent implements OnInit, OnDestroy {
     currentDate: Date;
-    currentMonth: number;
+    currentMonthName: string;
     currentYear: number;
     daysInCurrentMonth: number[];
-    subscription: Subscription;
+    dateSubscription: Subscription;
     
     constructor(private calendarService: CalendarService) { }
 
     ngOnInit() {
-        this.subscription = this.calendarService.currentDateChanged
+        this.dateSubscription = this.calendarService.currentDateChanged
         .subscribe(
             (currentDate: Date) => {
                 this.currentDate = currentDate;
-                this.currentMonth = this.currentDate.getMonth();
+                this.currentMonthName = this.calendarService.getMonthName(this.currentDate.getMonth());
                 this.currentYear = this.currentDate.getFullYear();
                 this.daysInCurrentMonth = this.calendarService.getDaysInMonth(this.currentDate.getMonth(), this.currentYear);
             }
         );
         this.currentDate = this.calendarService.getCurrentDate();
-        this.currentMonth = this.currentDate.getMonth();
+        this.currentMonthName = this.calendarService.getMonthName(this.currentDate.getMonth());
         this.currentYear = this.currentDate.getFullYear();
-        this.daysInCurrentMonth = this.calendarService.getDaysInMonth(this.currentDate.getMonth(), this.currentYear);
+        this.daysInCurrentMonth = this.calendarService.getDaysInMonth(this.currentDate.getMonth(), this.currentDate.getFullYear());
     }
 
     onPrevMonth() {
-        this.calendarService.setCurrentMonth(this.currentMonth - 1);
+        this.calendarService.setCurrentMonth(this.currentDate.getMonth() - 1);
+    }
+
+    onNextMonth() {
+        this.calendarService.setCurrentMonth(this.currentDate.getMonth() + 1);
     }
 
     ngOnDestroy() {
-        this.subscription.unsubscribe();
+        this.dateSubscription.unsubscribe();
     }
 }
