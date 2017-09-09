@@ -5,6 +5,8 @@ import { AppRoutingModule } from '../app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 
+import { EventService } from '../events/event.service';
+
 @NgModule({
     declarations: [
         HeaderComponent,
@@ -17,6 +19,6 @@ import { HomeComponent } from './home/home.component';
         AppRoutingModule,
         HeaderComponent
     ],
-    providers: []
+    providers: [EventService]
 })
 export class CoreModule { }

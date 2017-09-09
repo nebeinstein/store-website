@@ -19,7 +19,6 @@ import { AppComponent } from './app.component';
         CoreModule,
         EventsModule
     ],
-    providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
