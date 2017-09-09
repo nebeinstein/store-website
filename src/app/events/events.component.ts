@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     selector: 'sw-events',
@@ -7,10 +7,11 @@ import { Router } from '@angular/router';
     styleUrls: ['./events.component.css']
 })
 export class EventsComponent {
-    constructor(private router: Router) {
+    constructor(private route: ActivatedRoute,
+                private router: Router) {
     }
 
     onNavigateTo(path: string) {
-        this.router.navigate([path]);
+        this.router.navigate([path], {relativeTo: this.route});
     }
 }
