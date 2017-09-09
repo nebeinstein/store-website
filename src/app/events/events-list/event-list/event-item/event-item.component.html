@@ -8,7 +8,7 @@
     </span>-->
     <div class="pull-left">
         <h4 class="list-group-item-heading">{{ event.title }}</h4>
-        <p class="list-group-item-text">{{ event.date | date }} | {{ event.time }}</p>
+        <p class="list-group-item-text">{{ event.date | date:'longDate' }} | {{ event.time | time }}</p>
         <p class="list-group-item-text">{{ event.subtitle }}</p>
     </div>
 </a>

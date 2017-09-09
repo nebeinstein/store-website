@@ -11,6 +11,8 @@ import { EventsCalendarComponent } from './events-calendar/events-calendar.compo
 import { EventsListComponent } from './events-list/events-list.component';
 import { EventStartComponent } from './events-list/event-start/event-start.component';
 
+import { TimePipe } from './time.pipe';
+
 @NgModule({
     declarations: [
         EventsComponent,
@@ -19,7 +21,8 @@ import { EventStartComponent } from './events-list/event-start/event-start.compo
         EventListComponent,
         EventsCalendarComponent,
         EventsListComponent,
-        EventStartComponent
+        EventStartComponent,
+        TimePipe
     ],
     imports: [
         CommonModule,

@@ -14,7 +14,7 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <h4>{{ event.date | date }} | {{ event.time }}</h4>
+        <h4>{{ event.date | date:'longDate' }} | {{ event.time | time }}</h4>
     </div>
 </div>
 <div class="row">
