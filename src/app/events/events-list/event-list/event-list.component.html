@@ -1,3 +1,9 @@
-<p>
-    Event list works!
-</p>
+<div class="row">
+    <div class="col-xs-12">
+        <sw-event-item
+            *ngFor="let eventE1 of events; let i = index"
+            [event]="eventE1"
+            [index]="i">
+        </sw-event-item>
+    </div>
+</div>

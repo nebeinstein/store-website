@@ -1,3 +1,14 @@
-<p>
-    Event item works!
-</p>
+<a style="cursor: pointer;" routerLinkActive="active" class="list-group-item clearfix">
+    <span class="pull-left">
+        <img
+            [src]="event.imagePath"
+            alt="{{ event.title }}"
+            class="img-responsive thumbnail"
+            style="max-height: 100px;">
+    </span>
+    <div class="pull-right">
+        <h4 class="list-group-item-heading">{{ event.title }}</h4>
+        <p class="list-group-item-text">{{ event.date | date }} | {{ event.time }}</p>
+        <p class="list-group-item-text">{{ event.subtitle }}</p>
+    </div>
+</a>
