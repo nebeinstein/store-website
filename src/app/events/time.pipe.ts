@@ -5,18 +5,14 @@ import { Pipe, PipeTransform } from '@angular/core'
 })
 export class TimePipe implements PipeTransform {
     transform(value: string[]) {
-        let start = value[0];
-        let end = value[1];
-        value.forEach(
-            (item, index) => {
-                let times = item.split(':');
-                if (parseInt(times[0]) > 12) {
-                    value[index] = (parseInt(times[0])-12) + ':' + times[1] + ' p.m.';
-                } else {
-                    value[index] = item + ' a.m.';
-                }
-            }
-        );
-        return value[0] + ' - ' + value[1];
-    }
+		let startTime = this.twentyFourHourToTwelveHour(value[0]);
+		let endTime = this.twentyFourHourToTwelveHour(value[1]);
+        return startTime + ' - ' + endTime;
+	} 
+
+	twentyFourHourToTwelveHour(time: string){
+		let hour = time.split(':')[0];
+		let minute = time.split(':')[1];
+		return parseInt(hour) > 12 ? parseInt(hour) - 12 + ':' + minute + ' p.m.' : hour + ':' + minute + ' a.m.';
+	}
 }
