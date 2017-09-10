@@ -14,6 +14,7 @@ export class EventsCalendarComponent implements OnInit, OnDestroy {
     currentYear: number;
     daysInCurrentMonth: number[];
     dateSubscription: Subscription;
+    today: Date;
     
     constructor(private calendarService: CalendarService) { }
 
@@ -27,6 +28,7 @@ export class EventsCalendarComponent implements OnInit, OnDestroy {
                 this.daysInCurrentMonth = this.calendarService.getDaysInMonth(this.currentDate.getMonth(), this.currentYear);
             }
         );
+        this.today = this.calendarService.getToday();
         this.currentDate = this.calendarService.getCurrentDate();
         this.currentMonthName = this.calendarService.getMonthName(this.currentDate.getMonth());
         this.currentYear = this.currentDate.getFullYear();

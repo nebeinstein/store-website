@@ -1,13 +1,18 @@
 import { Subject } from 'rxjs/Subject';
 
 export class CalendarService {
-    private currentDate: Date = new Date(2017, 8, 9);
+    private today: Date = new Date();
+    private currentDate: Date = new Date();
     currentDateChanged = new Subject<Date>();
 
     private months = [
         'January', 'February', 'March', 'April', 'May', 'June',
         'July', 'August', 'September', 'October', 'November', 'December'
     ]
+
+    getToday() {
+        return this.today;
+    }
 
     getCurrentDate() {
         return this.currentDate;
