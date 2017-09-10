@@ -11,6 +11,8 @@ import { EventService } from '../../event.service';
 })
 export class EventListComponent implements OnInit, OnDestroy {
     events: EventModel[];
+    todaysEvents: EventModel[];
+    thisWeeksEvents: EventModel[];
     subscription: Subscription;
 
     constructor(private eventService: EventService) { }
@@ -20,9 +22,13 @@ export class EventListComponent implements OnInit, OnDestroy {
         .subscribe(
             (events: EventModel[]) => {
                 this.events = events;
+                // this.todaysEvents = this.eventService.getTodaysEvents();
+                // this.thisWeeksEvents = this.eventService.getThisWeeksEvents();
             }
         );
         this.events = this.eventService.getEvents();
+        // this.todaysEvents = this.eventService.getTodaysEvents();
+        // this.thisWeeksEvents = this.eventService.getThisWeeksEvents();
     }
 
     ngOnDestroy() {

@@ -1,7 +1,10 @@
+import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 
+import { CalendarService } from './events-calendar/calendar.service';
 import { EventModel } from './event.model';
 
+@Injectable()
 export class EventService {
     eventsChanged = new Subject<EventModel[]>();
 
@@ -24,6 +27,8 @@ export class EventService {
         )
     ];
 
+    constructor(private calendarService: CalendarService){ }
+
     setEvents(events: EventModel[]) {
         this.events = events;
         this.eventsChanged.next(this.events.slice());
@@ -33,7 +38,7 @@ export class EventService {
         return this.events.slice();
     }
 
-    getEvent(index: number) {
+    getEventByIndex(index: number) {
         return this.events[index];
     }
 
@@ -51,4 +56,42 @@ export class EventService {
         this.events.splice(index, 1);
         this.eventsChanged.next(this.events.slice());
     }
+
+    getEventsByDate(date: Date) {
+        var selectEvents: EventModel[] = [];
+        this.events.forEach(
+            (event: EventModel) => {
+                if (event.date === date) {
+                    selectEvents.push(event);
+                    console.log("Added to list: " + event.title)
+                }
+            }
+        );
+        return selectEvents;
+    }
+
+    // getEventsInWindow(startDate: Date, endDate: Date) {
+    //     var selectEvents: EventModel[] = [];
+    //     var currentDate = startDate;
+    //     while (currentDate !== endDate){
+    //         selectEvents.concat(this.getEventsByDate(currentDate));
+    //         currentDate.setDate(currentDate.getDate() + 1);
+    //     }
+    //     return selectEvents;
+    // }
+
+    // getTodaysEvents() {
+    //     return this.getEventsByDate(this.calendarService.getToday());
+    // }
+
+    // getThisWeeksEvents() {
+    //     var startDate = new Date();
+    //     startDate.setDate(this.calendarService.getToday().getDate() + 1);
+    //     var endDate = new Date();
+    //     while (endDate.getDay() < 7) {
+    //         endDate.setDate(endDate.getDate() + 1)
+    //     }
+    //     return this.getEventsInWindow(startDate, endDate);
+    // }
+
 }

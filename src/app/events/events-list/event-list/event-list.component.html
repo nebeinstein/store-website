@@ -1,9 +1,37 @@
-<div class="row">
-    <div class="col-xs-12">
-        <sw-event-item
-            *ngFor="let eventE1 of events; let i = index"
-            [event]="eventE1"
-            [index]="i">
-        </sw-event-item>
+<div class="panel panel-default">
+    <div class="panel-heading">Today</div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-12">
+                <sw-event-item
+                    *ngFor="let eventE1 of events; let i1 = index"
+                    [event]="eventE1"
+                    [index]="i1">
+                </sw-event-item>
+            </div>
+        </div>
     </div>
 </div>
+<div class="panel panel-default">
+    <div class="panel-heading">This Week</div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-12">
+                <!--<sw-event-item
+                    *ngFor="let eventE2 of events; let i2 = index"
+                    [event]="eventE2"
+                    [index]="i2">
+                </sw-event-item>-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div class="row">
+    <div class="col-xs-12">
+        <sw-event-item
+            *ngFor="let eventE3 of events; let i3 = index"
+            [event]="eventE3"
+            [index]="i3">
+        </sw-event-item>
+    </div>
+</div>-->

@@ -22,7 +22,7 @@ export class EventDetailComponent implements OnInit {
         this.route.params.subscribe(
             (params: Params) => {
                 this.id = +params['id'];
-                this.event = this.eventService.getEvent(this.id);
+                this.event = this.eventService.getEventByIndex(this.id);
             }
         )
     }
