@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from '../app-routing.module';
 
+import { ContactComponent } from '../contact/contact.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 
@@ -12,6 +13,7 @@ import { CalendarService } from '../events/events-calendar/calendar.service';
 
 @NgModule({
     declarations: [
+        ContactComponent,
         HeaderComponent,
         HomeComponent,
         DropdownDirective
