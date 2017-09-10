@@ -10,13 +10,12 @@
 
 .hpfont {
     font-family: 'Harry-Potter';  
-    /*color: #D4AF37;*/
-    color: black;
 }
 
 .centered {
     text-align: center;
     /*color: #D4AF37;*/
+    color: black;
 }
 
 .bigHeader {
