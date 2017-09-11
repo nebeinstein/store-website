@@ -1,11 +1,29 @@
+@font-face {
+    font-family: 'Harry-Potter';
+    src:    url('../../fonts/harry-potter-font/Harry-Potter.ttf.woff') format('woff'),
+            url('../../fonts/harry-potter-font/Harry-Potter.ttf.svg#Harry-Potter') format('svg'),
+            url('../../fonts/harry-potter-font/Harry-Potter.ttf.eot'),
+            url('../../fonts/harry-potter-font/Harry-Potter.ttf.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.hpFont {
+    font-family: 'Harry-Potter';  
+}
+
+.goldText {
+    color: #D4AF37;
+}
+
 ul {list-style-type: none;}
-body {font-family: Verdana, sans-serif;}
+/*body {font-family: Verdana, sans-serif;}*/
 
 /* Month header */
 .month {
     padding: 70px 25px;
     width: 100%;
-    background: #1abc9c;
+    background: #D4AF37;
     text-align: center;
 }
 
