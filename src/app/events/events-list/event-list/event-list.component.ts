@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 import { EventModel } from '../../event.model';
-import { EventService } from '../../event.service';
+import { EventsListService } from '../events-list.service';
 
 @Component({
     selector: 'sw-event-list',
@@ -15,20 +15,16 @@ export class EventListComponent implements OnInit, OnDestroy {
     thisWeeksEvents: EventModel[];
     subscription: Subscription;
 
-    constructor(private eventService: EventService) { }
+    constructor(private eventsListService: EventsListService) { }
 
     ngOnInit() {
-        this.subscription = this.eventService.eventsChanged
+        this.subscription = this.eventsListService.eventsChanged
         .subscribe(
-            (events: EventModel[]) => {
-                this.events = events;
-                // this.todaysEvents = this.eventService.getTodaysEvents();
-                // this.thisWeeksEvents = this.eventService.getThisWeeksEvents();
+            (events: EventModel[][]) => {
+                this.todaysEvents = this.eventsListService.getTodaysEvents();
             }
         );
-        this.events = this.eventService.getEvents();
-        // this.todaysEvents = this.eventService.getTodaysEvents();
-        // this.thisWeeksEvents = this.eventService.getThisWeeksEvents();
+        this.todaysEvents = this.eventsListService.getTodaysEvents();
     }
 
     ngOnDestroy() {

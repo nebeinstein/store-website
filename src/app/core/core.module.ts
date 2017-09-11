@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { DropdownDirective } from '../shared/dropdown.directive';
 
 import { EventService } from '../events/event.service';
+import { EventsListService } from '../events/events-list/events-list.service';
 import { CalendarService } from '../events/events-calendar/calendar.service';
 
 @NgModule({
@@ -25,6 +26,7 @@ import { CalendarService } from '../events/events-calendar/calendar.service';
     ],
     providers: [
         EventService,
+        EventsListService,
         CalendarService
     ]
 })

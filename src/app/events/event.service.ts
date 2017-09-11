@@ -11,7 +11,7 @@ export class EventService {
     private events: EventModel[] = [
         new EventModel(
             'Tim Sale Appearing for an In-Store Signing - Sept. 9th',
-            new Date('2017-9-9'),
+            new Date('2017-9-11'),
             ['5:00', '10:00'],
             'Special Guest Appearance by Batman Artist Tim Sale at That’s Entertainment!',
             'Special Guest Appearance by Batman Artist Tim Sale at That’s Entertainment! That’s Entertainment of Worcester, MA continues to celebrate its 25th year of business on Park Avenue in a BIG way! Highly revered Batman artist Tim Sale will be appearing at That’s Entertainment on Saturday, September 9th from 12:00 p.m. to 5:00 p.m. for an in-store signing. Also, all back-issue, trade paperback, and hard cover comic books will be 25% off all day long, 10:00 a.m. to 8:00 p.m. All "display" comic books retailing between $19.95 and $100 and under will also be 25% off.',
@@ -70,15 +70,15 @@ export class EventService {
         return selectEvents;
     }
 
-    // getEventsInWindow(startDate: Date, endDate: Date) {
-    //     var selectEvents: EventModel[] = [];
-    //     var currentDate = startDate;
-    //     while (currentDate !== endDate){
-    //         selectEvents.concat(this.getEventsByDate(currentDate));
-    //         currentDate.setDate(currentDate.getDate() + 1);
-    //     }
-    //     return selectEvents;
-    // }
+    getEventsInWindow(startDate: Date, endDate: Date) {
+        var selectEvents: EventModel[] = [];
+        var currentDate = startDate;
+        while (currentDate !== endDate){
+            selectEvents.concat(this.getEventsByDate(currentDate));
+            currentDate.setDate(currentDate.getDate() + 1);
+        }
+        return selectEvents;
+    }
 
     // getTodaysEvents() {
     //     return this.getEventsByDate(this.calendarService.getToday());

@@ -11,6 +11,7 @@ export class CalendarService {
     ]
 
     getToday() {
+        console.log('Today is ' + this.today);
         return this.today;
     }
 

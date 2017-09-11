@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <sw-event-item
-                    *ngFor="let eventE1 of events; let i1 = index"
+                    *ngFor="let eventE1 of todaysEvents; let i1 = index"
                     [event]="eventE1"
                     [index]="i1">
                 </sw-event-item>
@@ -17,11 +17,11 @@
     <div class="panel-body">
         <div class="row">
             <div class="col-xs-12">
-                <!--<sw-event-item
+                <sw-event-item
                     *ngFor="let eventE2 of events; let i2 = index"
                     [event]="eventE2"
                     [index]="i2">
-                </sw-event-item>-->
+                </sw-event-item>
             </div>
         </div>
     </div>
