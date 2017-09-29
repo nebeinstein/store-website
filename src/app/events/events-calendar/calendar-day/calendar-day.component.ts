@@ -2,6 +2,8 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 import { CalendarService } from '../calendar.service';
+import { DayModel } from '../day.model';
+import { EventService } from '../../event.service';
 
 @Component({
     selector: 'sw-calendar-day',
@@ -11,24 +13,28 @@ import { CalendarService } from '../calendar.service';
 export class CalendarDayComponent implements OnInit, OnDestroy {
     @Input() value;
     today: Date;
-    month: number;
+    currentDate: DayModel;
+    // currentDate: Date;
     subscription: Subscription;
 
-    constructor(private calendarService: CalendarService) { }
+    constructor(private calendarService: CalendarService,
+                private eventService: EventService) {
+    }
 
     ngOnInit() {
         this.subscription = this.calendarService.currentDateChanged
         .subscribe(
             (currentDate: Date) => {
-                this.month = this.calendarService.getCurrentMonth();
+                this.currentDate.day = currentDate;
+                this.currentDate.events = this.eventService.getEventsByDate(this.currentDate.day);
             }
         );
         this.today = this.calendarService.getToday();
-        this.month = this.calendarService.getCurrentMonth();
+        this.currentDate = new DayModel(this.calendarService.getCurrentDate(), this.eventService.getEventsByDate(this.calendarService.getCurrentDate()));
     }
 
     isMonthCorrect() {
-        return this.calendarService.getCurrentMonth() === this.today.getMonth();
+        return this.currentDate.day.getMonth() === this.today.getMonth();
     }
 
     ngOnDestroy() {

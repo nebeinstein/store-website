@@ -1,3 +1,18 @@
 <td [ngClass]="{'today' : (isMonthCorrect() && value === today.getDate())}">
-    {{ value }}
+    <a style="cursor: pointer;" [routerLink]="[value]"routerLinkActive="active" class="clearfix">{{ value }}</a>
 </td>
+
+<!--<a style="cursor: pointer;" [routerLink]="[index]"routerLinkActive="active" class="list-group-item clearfix">
+    <span class="pull-left">
+        <img
+            [src]="event.imagePath"
+            alt="{{ event.title }}"
+            class="img-responsive thumbnail"
+            style="max-height: 70px;">
+    </span>
+    <div class="pull-left">
+        <h4 class="list-group-item-heading">{{ event.title }}</h4>
+        <p class="list-group-item-text">{{ event.date | date:'longDate' }} | {{ event.time | time }}</p>
+        <p class="list-group-item-text">{{ event.subtitle }}</p>
+    </div>
+</a>-->

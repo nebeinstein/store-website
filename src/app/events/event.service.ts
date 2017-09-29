@@ -33,6 +33,18 @@ export class EventService {
         return this.events.slice();
     }
 
+    getEventsByDate(date: Date) {
+        var selectEvents: EventModel[] = [];
+        this.events.forEach(
+            (event: EventModel) => {
+                if (event.date === date) {
+                    selectEvents.push(event);
+                }
+            }
+        );
+        return selectEvents;
+    }
+
     getEvent(index: number) {
         return this.events[index];
     }
