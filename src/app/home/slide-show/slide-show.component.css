@@ -39,8 +39,8 @@
 
 /* Caption text */
 .text {
-    /*color: #f2f2f2;*/
-    color: black;
+    color: #f2f2f2;
+    /*color: black;*/
     font-size: 15px;
     padding: 8px 12px;
     position: absolute;
@@ -77,7 +77,6 @@
 .image {
     width: 1000px;
     height: 500px;
-    /*max-height: 500px;*/
 }
 
 /* Fading animation */
