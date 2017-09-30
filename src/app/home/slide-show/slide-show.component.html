@@ -1,10 +1,17 @@
 <div class="slideshow-container">
-    <div class="mySlides">
+    <!--<div class="mySlides">
         <img class="image" src="https://www.sitebuilderreport.com/assets/facebook-stock-up-446fff24fb11820517c520c4a5a4c032.jpg">
         <div class="text">Caption Text</div>
-    </div>
+    </div>-->
 
-    <div class="mySlides">
+    <sw-slide-show-item
+        *ngFor="let eventE1 of events; let i = index;"
+        [event]="eventE1"
+        [index]="i"
+        [slideIndex]="slideIndex">
+    </sw-slide-show-item>
+
+    <!--<div class="mySlides">
         <img class="image" src="https://ak.picdn.net/assets/cms/89a342bc2cb8831391f7feb79d0a8ed22265f892-stock-photo-lonely-boat-on-a-beach-with-aerial-view-280774472.jpg">
         <div class="text">Caption Two</div>
     </div>
@@ -12,7 +19,7 @@
     <div class="mySlides">
         <img class="image" src="https://www.bigstockphoto.com/images/homepage/2016_bigstock_picks.jpg">
         <div class="text">Caption Three</div>
-    </div>
+    </div>-->
 
     <a class="prev" (click)="plusSlides(-1)"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
     <a class="next" (click)="plusSlides(1)"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
@@ -21,5 +28,4 @@
 <div style="text-align:center">
     <span class="dot" (click)="currentSlide(1)"></span> 
     <span class="dot" (click)="currentSlide(2)"></span>
-    <span class="dot" (click)="currentSlide(3)"></span>
 </div>
